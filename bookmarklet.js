@@ -30,10 +30,14 @@ if (!document.getElementById("ovipb336310")) {
         matches = document.documentElement.innerHTML.match(pattern);
     // Added these code here to work with kisscartoon
     if (-1 != window.location.href.indexOf("kisscartoon.me")) {
-        var kiss_pattern = RegExp("(https://redirector.googlevideo.com/videoplayback)(.)+(ck2)"),
-            kiss_matches = document.documentElement.innerHTML.match(kiss_pattern);
-        if (kiss_matches) {
-          window.location = "https://vidcast.dabble.me/index.html?video_link=" + encodeURIComponent(kiss_matches[0].replace(/&amp;/g, '&'))
+        var gvideo_pattern = RegExp("(https://redirector.googlevideo.com/videoplayback)(.)+(ck2)"),
+            gvideo_matches = document.documentElement.innerHTML.match(gvideo_pattern),
+            bspot_pattern  = RegExp("(https://2.bp.blogspot.com/)(.)+(=m22)"),
+            bspot_matches  = document.documentElement.innerHTML.match(bspot_pattern);
+        if (gvideo_matches) {
+          window.location = "https://vidcast.dabble.me/index.html?video_link=" + encodeURIComponent(gvideo_matches[0].replace(/&amp;/g, '&'))
+        } else if (bspot_matches) {
+          window.location = "https://vidcast.dabble.me/index.html?video_link=" + encodeURIComponent(bspot_matches[0].replace(/&amp;/g, '&'))
         }
     }
     if (-1 != window.location.href.indexOf("ted.com")) {
