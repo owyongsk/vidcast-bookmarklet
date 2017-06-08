@@ -31,6 +31,9 @@ if (-1 != href.indexOf("thevideos.tv")) {
   sources = jwplayer().config.sources;
   video = sources[sources.length-1].file;
 }
+if (-1 != href.indexOf("openload")) {
+  video = document.querySelector("#olvideo_html5_api").src;
+}
 if (video) {
   if (window.sk_vid_cast) {
     window.location = "https://vidcast.dabble.me/index.html?video_link="
