@@ -39,8 +39,7 @@ if (video) {
     window.location = "https://vidcast.dabble.me/index.html?video_link="
       + encodeURIComponent(video.replace(/&amp;/g, '&'));
   } else {
-    console.log(video);
-    alert(video);
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", video);
   }
 } else {
   alert("Can't find an mp4 here!");
