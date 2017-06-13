@@ -39,6 +39,7 @@ if (video) {
     window.location = "https://vidcast.dabble.me/index.html?video_link="
       + encodeURIComponent(video.replace(/&amp;/g, '&'));
   } else {
+    console.log(video);
     alert(video);
   }
 } else {
