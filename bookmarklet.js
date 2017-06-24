@@ -32,6 +32,9 @@ if (-1 != href.indexOf("thevideos.tv")) {
   video = sources[sources.length-1].file;
 }
 if (-1 != href.indexOf("openload")) {
+  document.getElementById('videooverlay').dispatchEvent(new Event('click'));
+  document.getElementsByClassName('vjs-big-play-button')[0].
+    dispatchEvent(new Event('click'));
   video = document.querySelector("#olvideo_html5_api").src;
 }
 if (video) {
